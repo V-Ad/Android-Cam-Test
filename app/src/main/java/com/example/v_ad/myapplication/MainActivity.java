@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
     View rightBox;
 
     final int CAMERA_ID = 0;
-    final boolean FULL_SCREEN = true;
+    final boolean FULL_SCREEN = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,16 +124,16 @@ public class MainActivity extends Activity {
 
         Matrix matrix = new Matrix();
         // подготовка матрицы преобразования
-        if (!fullScreen) {
+      //  if (!fullScreen) {
             // если превью будет "втиснут" в экран (второй вариант из урока)
             matrix.setRectToRect(rectPreview, rectDisplay,
                     Matrix.ScaleToFit.START);
-        } else {
-            // если экран будет "втиснут" в превью (третий вариант из урока)
-            matrix.setRectToRect(rectDisplay, rectPreview,
-                    Matrix.ScaleToFit.START);
-            matrix.invert(matrix);
-        }
+       // } else {
+       //     // если экран будет "втиснут" в превью (третий вариант из урока)
+       //     matrix.setRectToRect( rectPreview,rectDisplay,
+       //             Matrix.ScaleToFit.START);
+       //     matrix.invert(matrix);
+       // }
         // преобразование
         matrix.mapRect(rectPreview);
 
